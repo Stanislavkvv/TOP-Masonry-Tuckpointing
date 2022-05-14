@@ -6,75 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    
     <title>Document</title>
 </head>
 <body>
     <header>
+
         <nav class="navbar">
             <div class="container">
-                <a href="" class="navbar-brand">Company</a>
-
-                <ul class="navbar-menu">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="">Testimonials</a></li>
-                    <li><a href="">Gallery</a></li>
-                    <li><a href="">Locations</a></li>
-                    <li><a href="">Info</a></li>
-                    <li><a href="">CALL: (xxx) xxx-xxxx</a></li>
-                </ul>
+                <span><a href="#" class="navbar-brand">TOP Masonry&Tuckpointing</a></span>
+            
+                <div class="navbar-wrap">
+                    <ul class="navbar-menu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Locations</a></li>
+                        <li><a href="#">Info</a></li>
+                    </ul>
+                </div>
+                    <a href="#" class="callback">CALL: (xxx) xxx-xxxx</a>
+                
             </div>
         </nav>
+
     </header>
 
-    <footer>
-        <div class="info">
-            <div class="logo">
-                <img src="img/footerlogo.png" alt="">
+    <div class="slideshow-container">
+        <div class="myslide fade">
+            <div class="numbertext">1/3</div>
+            <img src="img/slider1.jpg" style="width: 100%;" alt="">
+            <div class="text">text1</div>
+        </div>
+
+        <div class="myslides fade">
+            <div class="numbertext">2/3</div>
+            <img src="img/slider2.jpg" style="width: 100%; " alt="">
+            <div class="text">text2</div>
+        </div>
+
+        <div class="myslides fade">
+            <div class="numbertext">3/3</div>
+            <img src="img/slider3.jpg" style="width: 100%;" art"">
+            <div class="text">text3</div>
+        </div>
+
+        <a  class="prev" onclick="plusSlides(-1)">&#10094</a>
+        <a  class="next" onclick="plusSlides(+1)">&#10095</a>
+
+        <br>
+            <div style="text-align: center;">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
             </div>
-            <div class="text">
-                MT Masonry Chicago is the perfect choice to deliver services such as tuckpointing Chicago and chimney repair Chicago for your residential or commercial space. Call us today to know more about our services.
-            </div>
-        </div>
-        <div class="contact">
-            <h1 class="head">Contacts</h1>
-            <div class="line"></div>
-            <ul class="body">
-                <li>
-                    <div class="left">Phone: </div>
-                    <div class="right"><a href="+1234567890">+1234567890</a></div>
-                </li>
-                <li>
-                    <div class="left">Address: </div>
-                    <div class="right">4821 N Neva Ave, <br/>Chicago, IL 60656</div>
-                </li>
-                <li>
-                    <div class="left">Email: </div>
-                    <div class="right">mtmasonrychicago@gmail.com</div>
-                </li>
-            </ul>
-        </div>
-        <div class="work">
-            <h1 class="head">WORKING HOURS</h1>
-            <div class="line"></div>
-            <ul class="body">
-                <li>Monday – Friday – 8am – 7pm</li>
-                <li>Saturday – 9am – 2pm</li>
-                <li>Sunday – closed</li>
-            </ul>
-        </div>
-        <div class="menu">
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Services</li>
-                <li>Testimonials</li>
-                <li>Gallery</li>
-                <li>Locations</li>
-                <li>Contact</li>
-            </ul>
-        </div>
-    </footer>
+
+
+
+    </div>
+    
+<script src="js/script.js"></script>
+
 </body>
 </html>
