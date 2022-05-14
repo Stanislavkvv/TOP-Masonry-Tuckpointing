@@ -1,32 +1,38 @@
-var slideIndex = 1;
-showSlides(slideIndex);
+"use strict"
+// slider
+const prevBtn = document.querySelector("section.slider .slideshow button.prev");
+const nextBtn = document.querySelector("section.slider .slideshow button.next");
+const slideshowBLock = document.querySelector("section.slider .slideshow")
 
-function plusSlides(n) {
-    showSlides(slideIndex += n);
+prevBtn.addEventListener("click",function(){ slider("-") })
+nextBtn.addEventListener("click",function(){ slider("+") })
+
+let slide = 0;
+slider("+")
+function slider(action){
+    if(action=="+"){
+        if(slide==3){
+            slide = 1
+        } else {
+            slide++
+        }
+    } else if(action=="-") {
+        if(slide==1){
+            slide = 3
+        } else {
+            slide--
+        }
+    }
+    let i=60;
+    let int = setInterval(()=>{
+            slideshowBLock.style.opacity = i/100;
+            i++;
+            if(i==101){clearInterval(int)}
+        },10)
+    slideshowBLock.setAttribute("slide",slide)
+    setTimeout(()=>{
+        slideshowBLock.querySelectorAll(".container .sliderBlock ul.slidesText li").forEach(item=>{item.classList.remove("active")})
+        slideshowBLock.querySelector(`.container .sliderBlock ul.slidesText li[slide='${slide}']`).classList.add("active")
+    },50)
+    
 }
-
-function currentSlide(n) {
-    showSlides(slideIndex = n); 
-}
-
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-
-    if (n > slides.length) {
-        slideIndex = 1
-    }
-    if (n < 1){
-        slideIndex=slides.length
-    }
-    for (i=0; i < slides.length; i++){
-        slides[i].style.display= "none"
-    }
-    for (i = 0; i < dots.length; i++){
-        dots[i].classname = dots[i].className.replace("active","") ;
-    }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].classname+= " active";
-}
-

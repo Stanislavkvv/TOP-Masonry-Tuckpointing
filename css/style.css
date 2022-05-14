@@ -13,147 +13,210 @@
 }
 
 body {
-    position: relative;
-    height: auto;
-    min-height: 320px;
+    min-height: 100vh;
     overflow-x: hidden;
 }
 
-.navbar{
-    width: 100%;
-    height: 100px;
+header{
     box-shadow: 0px 4px 10px rgba(0, 0, 0, .1);
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    background-color: var(--color-1); 
 }
-
-.navbar .container {
-     height: inherit;  /*висота залежить від nav */
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-}
-
-.navbar-menu {
-    list-style-type: none; 
-    padding-left: 0;
-    margin-bottom: 0;   
-}
-
-.navbar-menu li {
-    display: inline-block;
-}
-
-.navbar-menu li a {
-    display: inline-block;
-    color: #242424;
-    text-decoration: none;
-    padding: 20px;
-    transition: all 0,07s;
-}
-
-.navbar-menu li a {
-    opacity: 1;
-}
-
-.navbar-wrap {
+header .container nav.navbar{
     display: flex;
-    flex-flow: row nowrap;    
+    padding: 0;
 }
-
-.callback {
-    margin-left: 20px;
-    padding: 10px 30px;
-    background-color: #f37800;
-    color: #f37800;
-    text-decoration: none;
-    border-radius: 100px;
-    color: #ffffff;
-    transform: all  .1s ease-out;
-    box-shadow: 0 4px 6px rgba(255, 127, 80, .2);
+header .container nav.navbar a.navbar-brand{
+    padding: 0;
 }
-
-.callback:hover {
-    transform: scale(1.04);
-    color: #ffffff;
-    box-shadow: 0 9px 9px rgba(255, 127, 80, .5);
+header .container nav.navbar a.navbar-brand img{
+    width: 4rem;
 }
-
-.navbar-brand {
-    font-weight: 700;
-    font-size: 26px;
-    text-decoration: none;
-    color: orange;
-    
+header .container nav.navbar .navbar-menu{
+    padding: 0;
+    margin: 0;   
+    display: flex;
 }
-
-.slideshow-container {
-    max-width: 1000px;
+header .container nav.navbar .navbar-menu li{
+    list-style-type: none;
+    border-left: 1px solid #ebebeb;
     position: relative;
-    margin: auto;   
+    overflow: hidden;
 }
-
-.next {
+header .container nav.navbar .navbar-menu li:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: -100%;
+    height: .2rem;
+    width: 100%;
+    background-color: var(--color-2);
+    transition: all .3s ease;
+}
+header .container nav.navbar .navbar-menu li:hover:after{
     right: 0;
-    border-radius: 3px 0 0 3px;
 }
+header .container nav.navbar .navbar-menu li:first-child{
+    border-left: none;
+}
+header .container nav.navbar .navbar-menu li a{
+    display: inline-block;
+    font-size: 1rem;
+    color: #333333;  
+    text-decoration: none;
+    padding: 1.5rem 1rem 1.5rem;
+    font-family: var(--font-2);
+    font-weight: 400;
+    line-height: 1.25;
+    color: #333;
+    position: relative;
+    transition: all .7s ease;
+}
+header .container nav.navbar .navbar-menu .callback{
+    color: var(--color-2);
+    text-decoration: none;
+    font-weight: bold;
+    font-family: var(--font-3);
+}
+header .container nav.navbar .navbar-menu .callback strong{
+    color: var(--color-3);
+}   
 
-.prev, .next {
+section.slider .slideshow{
+    position: relative;
+    min-height: 38rem;
+    display: flex;
+    margin-top: 4.2rem;
+}
+section.slider .slideshow .back{
+    background-color: rgba(0, 0, 0, .4);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+section.slider .slideshow[slide="1"]{
+    background-image: url("../img/slider/slider1.jpg");
+    background-size: cover;
+    background-position: 50% 80%;
+}
+section.slider .slideshow[slide="2"]{
+    background-image: url("../img/slider/slider2.jpg");
+    background-size: cover;
+    background-position: 50% 80%;
+}
+section.slider .slideshow[slide="3"]{
+    background-image: url("../img/slider/slider3.jpg");
+    background-size: cover;
+    background-position: 50% 80%;
+}
+section.slider .slideshow button.next{
+    right: 1.5rem;
+}
+section.slider .slideshow button.prev{
+    left: 1.5rem;
+}
+section.slider .slideshow button.prev, 
+section.slider .slideshow button.next{
+    z-index: 1;
     cursor: pointer;
     position: absolute;
     top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: #e8e8e8;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    border: none;
+    padding: .5rem 1rem;
+    transition: all .2s ease;
+}
+section.slider .slideshow button.prev:hover, 
+section.slider .slideshow button.next:hover{
+    background-color: rgba(0, 0, 0, 1);
+}
+section.slider .slideshow .container{
+    display: flex;
+    align-items: center; 
+    flex: 1 1 auto;
+    padding-left: 4rem;
+    z-index: 1;
+}
+section.slider .slideshow .container .sliderBlock{
+    padding: 2rem 1.5rem;
+    background-color: rgba(0, 0, 0, .6);
+}   
+section.slider .slideshow .container .sliderBlock h3{
+    color: var(--color-2);
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--color-2);
+}
+section.slider .slideshow .container .sliderBlock ul.slidesText{
+    padding: 0;
+}
+section.slider .slideshow .container .sliderBlock ul.slidesText li{
+    display: none;
+}
+section.slider .slideshow .container .sliderBlock ul.slidesText li.active{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+section.slider .slideshow .container .sliderBlock ul.slidesText li.active h1.slogan{
+    margin: 0;
+    display: block;
+    font-family: var(--font-2);
+    font-weight: 400;
+    font-size: 2rem;
+    margin: 0 0 .5rem;
+    color: var(--color-1);
+    padding-bottom: 1rem;
+    border-bottom: 4px solid var(--color-2);
+}
+section.slider .slideshow .container .sliderBlock ul.slidesText li.active .desc{
+    color: var(--color-1);
+    font-family: var(--font-2);
+    font-size: .95rem;
+}
+section.slider .slideshow .container .sliderBlock ul.slidesText li.active a{
+    background-color: var(--color-2);
+    color: var(--color-1);
+    text-decoration: none;
+    padding:  .5rem 2rem;
+    margin-top: 2rem;
+    transition: all .4s ease-in-out;
+}
+section.slider .slideshow .container .sliderBlock ul.slidesText li.active a:hover{
+    background-color: black;
 }
 
-.prev:hover, next:hover {
-    background-color: rgba(0, 0, 0, 0, 0.8);
+/* !!!тут можеш писати!!! */
+
+footer{
+    display: none;
 }
-
-.text {
-    color: #f2f2f2;
-    font-size: 12x;
-    padding: 8px, 12px;
-    position: absolute;
-    
-
+@keyframes fadeslider {
+    0% {opacity:0;}
+    100% {opacity:1;}
 }
-
-.dot {
-    cursor: pointer;
-    height: 13px;
-    width: 13px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
+@-moz-keyframes fadeslider {
+    0% {opacity:0;}
+    100% {opacity:1;}
 }
-
-.active dot:hover {
-    background-color: #717171;
+@-webkit-keyframes fadeslider {
+    0% {opacity:0;}
+    100% {opacity:1;}
 }
-
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration:1.5s ;
-    animation-name: fade;
-    animation-duration:1.5s ;
+@-o-keyframes fadeslider {
+    0% {opacity:0;}
+    100% {opacity:1;}
 }
-
-@-webkit-keyframes fade{
-    from{opacity: 4}
-    to {opacity: 1;}
+@-ms-keyframes fadeslider {
+    0% {opacity:0;}
+    100% {opacity:1;}
 }
-
-@keyframes fade {
-    from{opacity: 4}
-    to {opacity: 1;}
-}
-
-
-
