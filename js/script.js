@@ -9,6 +9,7 @@ nextBtn.addEventListener("click",function(){ slider("+") })
 
 let slide = 0;
 slider("+")
+setInterval(()=>{slider("+")},10000)
 function slider(action){
     if(action=="+"){
         if(slide==3){
@@ -34,5 +35,4 @@ function slider(action){
         slideshowBLock.querySelectorAll(".container .sliderBlock ul.slidesText li").forEach(item=>{item.classList.remove("active")})
         slideshowBLock.querySelector(`.container .sliderBlock ul.slidesText li[slide='${slide}']`).classList.add("active")
     },50)
-    
 }
