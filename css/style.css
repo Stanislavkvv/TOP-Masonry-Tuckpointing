@@ -31,7 +31,7 @@ header{
     top:0;
     left: 0;
     width: 100%;
-    z-index: 99;
+    z-index: 9900;
     background-color: var(--color-1); 
 }
 header .container nav.navbar{
@@ -92,7 +92,11 @@ header .container nav.navbar .navbar-menu .callback{
 }
 header .container nav.navbar .navbar-menu .callback strong{
     color: var(--color-3);
-}   
+} 
+header .container nav.navbar .toggle{
+    display: none;
+    cursor: pointer;
+}  
 
 main{
     flex: 1 1 auto;
@@ -155,6 +159,7 @@ section.slider .slideshow button.next:hover{
 }
 section.slider .slideshow .container{
     display: flex;
+    justify-content: center;
     align-items: center; 
     flex: 1 1 auto;
     padding-left: 4rem;
@@ -164,8 +169,7 @@ section.slider .slideshow .container .sliderBlock{
     padding: 2rem 1.5rem;
     background-color: rgba(0, 0, 0, .6);
 }   
-section.slider .slideshow .container .sliderBlock h3{
-    color: var(--color-2);
+section.slider .slideshow .container .sliderBlock h2{
     font-size: 1.2rem;
     font-weight: 500;
     text-decoration: none;
@@ -182,7 +186,7 @@ section.slider .slideshow .container .sliderBlock ul.slidesText li.active{
     flex-direction: column;
     align-items: flex-start;
 }
-section.slider .slideshow .container .sliderBlock ul.slidesText li.active h1.slogan{
+section.slider .slideshow .container .sliderBlock ul.slidesText li.active .slogan{
     margin: 0;
     display: block;
     font-family: var(--font-2);
@@ -243,7 +247,7 @@ section.about .container .info p.text{
 
 section.services .container{
     display: flex;
-    padding-top: 5.6rem;
+    padding-top:2rem;
     flex-direction: column;
 }
 section.services .container h1{
@@ -254,22 +258,15 @@ section.services .container h1{
     margin-bottom: 2rem;
 }
 section.services .container .variants{
-    display: flex;
-    flex-direction: column;
-}
-section.services .container .variants .variantsRow{
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:1rem;
 }
 section.services .container .variants .variant{
     display: flex;
-    width: 33%;
     flex-direction: column;
     align-items: flex-start;
-    margin-right: 1rem;
-}
-section.services .container .variants .variant:last-child{
-    margin-right: 0;
+    border-bottom: 1px solid #b2b2b2;
 }
 section.services .container .variants .variant .photo{
     height: 15.6rem;
@@ -314,7 +311,6 @@ section.services .container .variants .variant .photo:hover img{
     transform: translate(0,-5px);
 }
 section.services .container .variants .variant a.title{
-    border-top: 5px solid var(--color-2);
     text-decoration: none;
     margin: 0rem 1rem .2rem;
     padding-top: 1rem;
@@ -326,7 +322,7 @@ section.services .container .variants .variant a.title{
     z-index: 1;
 }
 section.services .container .variants .variant p.desc{
-    padding: 0 1rem 1rem;
+    padding: 0 1rem;
     font-family: var(--font-3);
     font-weight: 300;
     font-size: .9rem;
@@ -343,11 +339,12 @@ section.gallery .container{
     align-items: center;
     color: var(--color-1);
 }
-section.gallery .container h1{
+section.gallery .container .title{
     font-family: var(--font-2);
     font-weight: 300;
     margin-top: 2rem;
     font-size: 2rem;
+    text-align: center;
 }
 section.gallery .container p{
     text-align: center;
@@ -365,17 +362,14 @@ section.gallery .container .gallery{
 section.gallery .container .gallery .img{
     position: relative;
     overflow: hidden;
-    max-height: 18.75rem;
+    height: 18.75rem;
+    background-size: cover;
 }
 section.gallery .container .gallery .img img{
-    object-fit: cover;
-    transition: all .4s ease;
+    display: none;
 }
 section.gallery .container .gallery .img:hover{
     cursor: pointer;
-}
-section.gallery .container .gallery .img:hover img{
-    transform: scale(1.1);
 }
 section.gallery .container .gallery .img:after{
     content: "";
@@ -401,6 +395,7 @@ section.gallery .container a{
     color: var(--color-1);
     text-decoration: none;
     transition: all .3s ease;
+    text-align: center;
 }
 section.gallery .container a:hover{
     background-color: var(--color-1);
@@ -410,7 +405,7 @@ section.gallery .viewer{
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 100;
+    z-index: 10000;
     width: 100vw;
     height: 100vh;
     background-color: rgba(255, 255, 255, .6);
@@ -468,6 +463,7 @@ section.gallery .viewer .viewer__block .counter{
 
 section.testimonials {
     padding: 5.5rem 0;
+    position: relative;
 }
 section.testimonials .container{
     position: relative;
@@ -475,6 +471,7 @@ section.testimonials .container{
 section.testimonials .container .btns{
     position: absolute;
     display: flex;
+    z-index: 1000;
     justify-content: space-between;
     width: 100%;
     top: 50%;
@@ -490,7 +487,7 @@ section.testimonials .container .btns button{
 section.testimonials .container .btns button.noactive{
     color: var(--color-4);
 }
-section.testimonials h1{
+section.testimonials .titleText{
     font-family: var(--font-2);
     font-weight: 300;
     font-size: 2rem;
@@ -499,7 +496,6 @@ section.testimonials h1{
 section.testimonials .reviews{
     display: flex;
     margin: 2rem 3rem 0;
-    align-items: center;
     overflow: hidden;
     position: relative;
 }
@@ -508,6 +504,8 @@ section.testimonials .reviews .review{
     min-width: 50%;
     position: relative;
     transition: all .5s ease .2s;
+    display: flex;
+    flex-direction: column;
 }
 section.testimonials .reviews .review i{
     position: absolute;
@@ -516,7 +514,7 @@ section.testimonials .reviews .review i{
     color: var(--color-4);
     font-size: 5rem;
 }
-section.testimonials .reviews .review h1{
+section.testimonials .reviews .review .title{
     font-size: 1.5rem;
     font-weight: bold;
     font-family:var(--font-2);
@@ -529,6 +527,9 @@ section.testimonials .reviews .review p{
 }
 section.testimonials .reviews .review p.text{
     font-weight: 300;
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
 }
 section.testimonials .reviews .review p.author{
     font-weight: bold;
@@ -539,11 +540,11 @@ section.whyWe{
     border-top: 1px solid #d8d8d8;
 }
 section.whyWe .container{
-    padding: 3.5rem 0 2rem;
+    padding: 3.5rem 0 0;
     margin-bottom: .5rem;
     border-bottom: .25rem solid #b1b1b1;
 }
-section.whyWe .container h1{
+section.whyWe .container .titleText{
     font-family: var(--font-2);
     font-weight: 300;
     font-size: 2rem;
@@ -577,7 +578,7 @@ section.whyWe .container ul.reasons li .photo .back{
     height: 2.5rem;
     border-radius: 50%;
 }
-section.whyWe .container ul.reasons li h1.title{
+section.whyWe .container ul.reasons li .title{
     grid-area: title;
     color: var(--color-2);
     margin: .5rem 0;
@@ -597,13 +598,24 @@ section.info .container{
 section.info .container .contacts,
 section.info .container .map{
     flex: 1;
-}
-section.info .container .contacts{
-    margin-right: 1rem;
     display: flex;
     flex-direction: column;
 }
-section.info .container h1.title{
+section.info .container .map .map_block{
+    flex: 1 1 auto;
+    position: relative;
+}
+section.info .container .map .map_block iframe{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+section.info .container .contacts{
+    margin-right: 1rem;
+}
+section.info .container .title{
     font-family: var(--font-2);
     font-weight: 300;
     font-size: 2rem;
@@ -644,7 +656,7 @@ section.info .container .contacts .info_blocks .info_block .data a.data__desc:ho
 
 section.galleryPage{
     background-color: var(--color-1);
-    padding-top: 1.5rem;
+    padding-top: .5rem;
 }
 section.galleryPage .container{
     margin-bottom: .5rem;
@@ -656,7 +668,6 @@ section.galleryPage .container .gallery{
 }
 section.galleryPage .container .gallery .img{
     max-height: 12rem;
-    /* background-image: url("../img/gallery/1.jpg"); */
     background-position: center;
     background-size: cover;
 }
@@ -708,7 +719,7 @@ footer .container .menu{
     flex-direction: column;
     align-items: flex-start;
 }
-footer .container h1.head{
+footer .container .head{
     font-family: var(--font-2);
     font-weight: bold;
     font-size: 1rem;
@@ -760,4 +771,390 @@ footer .container .menu ul.body li:hover{
 footer .container .menu ul.body li a{
     text-decoration: none;
     color: var(--color-3);
+}
+
+@media(max-width:320px) {
+    header .container nav.navbar ul.navbar-menu li{
+        font-size: 1rem;
+    }
+}
+@media(min-width:320px) and (max-width:1024px){
+    header .container nav.navbar ul.navbar-menu li a{
+        font-size: 1.2rem;
+    }
+}
+@media(max-width:1024px){
+    header .container{
+        position: relative;
+    }
+    header .container nav.navbar a.navbar-brand img{
+        width: 10rem;
+    }
+    header .container nav.navbar .toggle{
+        display: flex;
+        transition: all .7s ease .2s;
+    }
+    header .container nav.navbar .toggle img{
+        width: 2.5rem;
+    }
+    header .container nav.navbar .toggle.active{
+        transform: rotate(90deg);
+    }
+    header .container nav.navbar ul.navbar-menu{
+        overflow: hidden;
+        position: absolute;
+        background-color: var(--color-1);
+        transition: all .7s ease .2s;
+        right: -300%;
+        border-radius: 0 0 10px 10px;
+        flex-direction: column;
+        -webkit-box-shadow: -2px 5px 8px 0px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: -2px 5px 8px 0px rgba(34, 60, 80, 0.2);
+        box-shadow: -2px 5px 8px 0px rgba(34, 60, 80, 0.2);
+        width: 100%;
+    }
+    header .container nav.navbar ul.navbar-menu.active{
+        right: 0;
+    }
+    header .container nav.navbar ul.navbar-menu li{
+        border-left: none;
+        border-top: 1px solid #ebebeb;
+    }
+    header .container nav.navbar ul.navbar-menu li a{
+        width: calc(100% - 2rem);
+        padding: 1rem;
+    }
+    header .container nav.navbar ul.navbar-menu li:first-child{
+        border-top: none;
+    }
+    section.services .container{
+        padding-top: 4rem;
+    }
+}
+@media(min-width:1000px) and (max-width:1200px) {
+    header .container nav.navbar a.navbar-brand img{
+        width: 10rem;
+    }
+}
+@media(max-width:400px){
+    section.slider .slideshow .container .sliderBlock{
+        padding: 1rem;
+    }
+}
+@media(min-width:600px) and (max-width:700px){
+    section.slider .slideshow .container{
+        padding: 0 2.3rem;
+    }
+}
+@media(max-width:650px){
+    section.slider .slideshow{
+        min-height: 90vh;
+    }
+    section.slider .slideshow .container{
+        padding: 1rem;
+        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
+    }
+    section.slider .slideshow .container .sliderBlock{
+        position: relative;
+    }
+    section.slider .slideshow .container .sliderBlock h2{
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    section.slider .slideshow .container .sliderBlock ul.slidesText{
+        margin-bottom: 0;
+    }
+    section.slider .slideshow .container .sliderBlock ul.slidesText li.active{
+        align-items: center;
+    }
+    section.slider .slideshow .container .sliderBlock ul.slidesText li.active a{
+        position: absolute;
+        bottom: -5rem;
+        width: 70%;
+        left:50%;
+        transform:translate(-50%, -50%);
+        text-align: center;
+    }
+    section.slider .slideshow .container .sliderBlock ul.slidesText li.active .slogan{
+        font-size: 1rem;
+        border-bottom-width: 3px;
+        margin-top: .5rem;
+        font-weight: 500;
+        text-align: center;
+    }
+    section.slider .slideshow .container .sliderBlock ul.slidesText li.active .desc{
+        margin-bottom: 0;
+        margin-top: .5rem;
+        text-align: center;
+        line-height: 1.5rem;
+    }
+    section.slider .slideshow button.prev,
+    section.slider .slideshow button.next{
+        top: 60%;
+    }
+    section.slider .slideshow button.prev,
+    section.slider .slideshow button.next{
+        display: none;
+    }
+}
+@media(min-width:600px) and (max-width:1024px){
+    section.slider .slideshow .container{
+        padding: 3rem;
+    }
+}
+@media(max-width:580px){
+    section.about .container h1{
+        font-size: calc(1rem + 1vw);
+        margin-bottom: 0;
+    }
+}
+@media(max-width:1440px){
+    section.about .container{
+        padding: 4rem 0 0;
+    }
+    section.about .container .info{
+        flex-direction: column;
+    }
+    section.about .container .info .photo{
+        margin-right: 0;
+    }
+    section.about .container .info p.text{
+        margin-bottom: 0;
+        padding: 1rem;
+    }
+}
+@media(min-width:580px) and (max-width:1440px){
+    section.about .container h1{
+        font-size: 2rem;
+    }
+}
+@media(min-width:768px) and (max-width:960px){
+    section.about .container .info p.text{
+        font-size: 1.4rem;
+    }
+}
+@media(max-width:480px){
+    section.services .container h1{
+        font-size: 1.4rem;
+        margin-bottom: .7rem;
+        padding-top: 0;
+    }
+    section.services .container .variants .variant a.title{
+        font-size: 1rem;
+    }
+}
+@media(max-width:768px){
+    section.services .container .variants{
+        display: flex;
+        flex-direction: column;
+    }
+    section.services .container{
+        padding-top: 1rem;
+    }
+}
+@media(max-width:1024px){
+    section.services .container .variants .variant{
+        width: unset;
+        margin: 0;
+    }
+    section.services .container .variants .variant .photo{
+        height: unset;
+    }
+    section.services .container .variants .variant p.desc{
+        margin-bottom: .5rem;
+    }
+}
+@media(min-width:768px) and (max-width:1200px){
+    section.services .container .variants{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media(min-width:768px) and (max-width:1400px){
+    section.services .container .variants .variant .photo{
+        height: 13rem;
+    }
+} 
+@media(max-width:480px){
+    section.gallery .container .title{
+        margin-top: 0;
+        text-align: center;
+    }
+    section.gallery .container p{
+        font-size: .8rem;
+    }
+}
+@media(max-width:320px){
+    section.gallery .container .title{
+        font-size: 1.2rem;
+    }
+}
+@media(min-width:320px) and (max-width:480px){
+    section.gallery .container .title{
+        font-size: 1.5rem;
+    }
+}
+@media(max-width:768px){
+    section.gallery .container .gallery{
+        display: flex;
+        flex-direction: column;
+    }
+    section.gallery .container .gallery .img{
+        display: none;
+    }
+    section.gallery .container .gallery .img:first-child,
+    section.gallery .container .gallery .img:last-child{
+        display: flex;
+    }
+}
+@media(min-width:768px) and (max-width:1024px){
+    section.gallery .container .gallery{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    section.gallery .container .gallery .img{
+        display: none;
+    }
+    section.gallery .container .gallery .img:nth-child(-n+4){
+        display: flex;
+    }
+}
+@media(max-width:1024px){
+    section.gallery .viewer{
+        display: none;
+    }
+    section.testimonials{
+        padding: 4rem 0;
+    }
+    section.testimonials .container{
+        position: static;
+    }
+    section.testimonials .titleText{
+        font-size: 1.5rem;
+    }
+    section.testimonials .reviews{
+        margin: 2rem 0 0;
+    }
+    section.testimonials .reviews .review i{
+        display: none;
+    }
+    section.testimonials .reviews .review{
+        padding: 0 3rem;
+        min-width: 100%;
+    }
+    section.testimonials .reviews .review p.author{
+        margin-top: 0;
+    }
+    section.testimonials .container .btns{
+        width: 70%;
+        left:50%;
+        transform:translate(-50%, 0);
+        top: unset;
+        bottom: 0;
+    }
+}
+/* @media(max-width:768px){
+    
+} */
+@media(max-width:320px){
+    section.whyWe .container .titleText{
+        font-size: 1.4rem;
+    }
+    section.whyWe .container ul.reasons li .photo{
+        display: none;
+    }
+    section.whyWe .container ul.reasons{
+        grid-gap:0;
+    }
+    footer .container .contact ul.body li{
+        font-size: .9rem;
+    }
+}
+@media(max-width:480px){
+    section.whyWe .container ul.reasons li .title{
+        font-size: 1.2rem;
+    }
+}
+@media(min-width:320px) and (max-width:768px){
+    section.whyWe .container .titleText{
+        font-size: 1.5rem;
+    }
+    section.whyWe .container ul.reasons{
+        grid-gap:.5rem;
+    }
+}
+@media(max-width:1000px){
+    section.whyWe .container ul.reasons{
+        display: flex;
+        flex-direction: column;
+    }
+    section.whyWe .container ul.reasons{
+        padding: 0 1rem;
+    }
+}
+@media(max-width:576px){
+    footer .container{
+        flex-direction: column;
+        padding: 0;
+    }
+    footer .container .info, 
+    footer .container .contact, 
+    footer .container .work, 
+    footer .container .menu{
+        padding: 1rem;
+    }
+}
+@media(min-width:576px) and (max-width:1024px){
+    footer .container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        padding: 1rem 0;
+    }
+    footer .container .info, 
+    footer .container .contact, 
+    footer .container .work, 
+    footer .container .menu{
+        margin-top: 1rem;
+    }
+}
+@media(min-width:1024px) and (max-width:1440px){
+    footer .container .info, 
+    footer .container .contact, 
+    footer .container .work, 
+    footer .container .menu{
+        padding-right: 1rem;
+    }
+    section.galleryPage .container .gallery{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+@media(max-width:1440px){
+    section.galleryPage .container .gallery .img{
+        display: flex;
+    }
+}
+@media(max-width:480px){
+    section.info .container .title{
+        font-size: 1.4rem;
+    }
+}
+@media(min-width:480px) and (max-width:768px){
+    section.info .container .title{
+        font-size: 1.6rem;
+    }
+}
+@media(max-width:768px){
+    section.info .container{
+        padding: 1rem 0;
+        flex-direction: column;
+    }
+    section.info .container .title{
+        text-align: center;
+    }
+    section.info .container .map{
+        min-height: 30rem;
+        margin-bottom: 1rem;
+    }
 }

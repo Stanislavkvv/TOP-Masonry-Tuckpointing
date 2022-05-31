@@ -1,15 +1,4 @@
 "use strict"
-//body settings
-setInterval(()=>{
-    document.body.style.paddingTop = `${document.querySelector("header").offsetHeight}px`
-},1000)
-
-//some window resize breakpoints
-window.addEventListener("resize",()=>{
-    hideViewer()
-    checkreviewSliderLength()
-}) 
-
 // main slider
 const prevBtn = document.querySelector("section.slider .slideshow button.prev");
 const nextBtn = document.querySelector("section.slider .slideshow button.next");
@@ -58,27 +47,19 @@ const prevBtnViewer = document.querySelector("section.gallery .viewer .viewer__b
 const nextBtnViewer = document.querySelector("section.gallery .viewer .viewer__block button.nextBtn")
 
 let viewerSlide;
-for (let i = 0; i < imgHowBtns.length; i++) {
-    imgHowBtns[i].style.backgroundImage = `url(./${imgHowBtns[i].querySelector("img").getAttribute("src")})`
-    imgHowBtns[i].setAttribute("photo",i+1)
-}
-
 imgHowBtns.forEach(item=>{
     item.addEventListener("click",function(){
-        if(window.innerWidth>1024){
-            document.body.classList.add("viewer")
-            viewer.classList.add("active")
-            viewer.querySelector("img").setAttribute("src",item.querySelector("img").getAttribute("src"))
-            viewer.querySelector(".counter span").textContent = item.getAttribute("photo")
-            viewerSlide = item.getAttribute("photo");
-        }
+        document.body.classList.add("viewer")
+        viewer.classList.add("active")
+        viewer.querySelector("img").setAttribute("src",item.querySelector("img").getAttribute("src"))
+        viewer.querySelector(".counter span").textContent = item.getAttribute("photo")
+        viewerSlide = item.getAttribute("photo");
     })
 })
-closeBtn.addEventListener("click",hideViewer)
-function hideViewer(){
+closeBtn.addEventListener("click",function(){
     document.body.classList.remove("viewer")
     viewer.classList.remove("active")
-}
+})
 prevBtnViewer.addEventListener("click",function(){viewerSlider("-")})
 nextBtnViewer.addEventListener("click",function(){viewerSlider("+")})
 function viewerSlider(action){
@@ -129,40 +110,18 @@ function reviewSlider(action){
     })
 }
 function checkreviewSliderLength(){
-    let reviewSliderLength;
-    if(window.innerWidth<1024){
-        reviewSliderLength = 1
-    } else {
-        reviewSliderLength = 2
-    }
-    if(reviews.length>reviewSliderLength){
+    if(reviews.length>2){
         prevBtnReviews.classList.add("noactive")
         nextBtnReviews.classList.remove("noactive")
     } 
     if(reviewSlide>0){
         prevBtnReviews.classList.remove("noactive")
     } 
-    if(reviewSlide+reviewSliderLength==reviews.length){
+    if(reviewSlide+2==reviews.length){
         prevBtnReviews.classList.remove("noactive")
         nextBtnReviews.classList.add("noactive")
     } 
     if(reviewSlide==0){
         prevBtnReviews.classList.add("noactive")
     }
-}
-
-//toggle header menu
-const toggleHeaderBtn = document.querySelector("header .container nav.navbar .toggle");
-
-toggleHeaderBtn.addEventListener("click",function(){
-    this.classList.toggle("active")
-    document.querySelector("header .container nav.navbar ul.navbar-menu").classList.toggle("active")
-    let navbar = document.querySelector("header .container nav.navbar")
-    navbar.querySelector("ul.navbar-menu").style.top = `${navbar.offsetHeight}px`
-})
-window.addEventListener("scroll",hideToggleMenu)
-window.addEventListener("resize",hideToggleMenu)
-function hideToggleMenu(){
-    toggleHeaderBtn.classList.remove("active")
-    document.querySelector("header .container nav.navbar ul.navbar-menu").classList.remove("active")
 }
