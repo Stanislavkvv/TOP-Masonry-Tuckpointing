@@ -217,7 +217,7 @@ section.slider .slideshow .container .sliderBlock ul.slidesText li.active a:hove
 section.about .container{
     display: flex;
     flex-direction: column;
-    padding: 5.5rem 0 0rem;
+    padding: 5.5rem 0 3rem;
 }
 section.about .container h1{
     font-size: 2rem;
