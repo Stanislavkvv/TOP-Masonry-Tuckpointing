@@ -15,12 +15,6 @@
                             <strong>Phone: </strong><a href="tel:+17737665391">+1(773)766-5391</a>
                         </li>
                         <li>
-                            <strong>Addresses:</strong>
-                            <br>----------
-                            <br>----------
-                            <br>----------
-                        </li>
-                        <li>
                             <strong>Email: </strong><a href="mailto:topmasonry4615@gmail.com">topmasonry4615@gmail.com</a>
                         </li>
                     </ul>
@@ -41,7 +35,7 @@
                         <li><a href="index.php?action=services">Services</a></li>
                         <li><a href="index.php?action=gallery">Gallery</a></li> 
                         <li><a href="index.php#testimonials">Testimonials</a></li>
-                        <li><a href="index.php?action=">Info</a></li>
+                        <li><a href="index.php?action=locations">Locations</a></li>
                     </ul>
                 </div>
             </div>
