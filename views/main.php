@@ -47,11 +47,11 @@
         </div>
     </section>
 
-    <section class="services main" id="services">
+    <section class="services" id="services">
         <div class="container">
             <h1>From Tuckpointing to Chimney Repair to Window Caulking – TOP Masonry&Tuckpointing Does It All</h1>
             <div class="variants">
-                <div class="variant">
+            <div class="variant">
                     <div class="photo">
                         <img src="img/services/1.jpeg" alt="Masonry Restoration">
                     </div>
@@ -64,6 +64,34 @@
                     </div>
                     <a class="title" >Masonry Construction</a>
                     <p class="desc">When it comes to any masonry construction in Chicago, you can trust our team to give you the best quality of work. Many masonry companies Chicago will give you a substandard finish at an expensive price, but we keep everything at our company reasonable and practical for our clients.</p>
+                </div>
+                <div class="variant">
+                    <div class="photo">
+                        <img src="img/services/3.jpeg" alt="Tuckpointing">
+                    </div>
+                    <a class="title" >Tuckpointing</a>
+                    <p class="desc">Trust TOP Masonry&Tuckpointing contractors Chicago to make your residential or commercial property look brand new again with the right touch of tuckpointing work. Expect every side of your building to look pristine, equally fixed, and clean. When looking for the best among tuckpointing companies in local Chicago, choose us!</p>
+                </div>
+                <div class="variant">
+                    <div class="photo">
+                        <img src="img/services/4.jpeg" alt="Brickwork and Brick Repair">
+                    </div>
+                    <a class="title" >Brickwork and Brick Repair</a>
+                    <p class="desc">Before your structure has a chance to break down, we will quickly plaster it with a timely brick repair in Chicago. We can also spruce up your chimney and make it fresh and strong with our chimney tuckpointing service in Chicago. Get in touch to know more about our work!</p>
+                </div>
+                <div class="variant">
+                    <div class="photo">
+                        <img src="img/services/5.jpeg" alt="Chimney Repair">
+                    </div>
+                    <a class="title" >Chimney Repair</a>
+                    <p class="desc">With repairable damage on your chimney, there is no need to worry about anything! Our team can take care of the chimney repair you need in Chicago. We have years of background in the industry and this makes us a premier chimney tuckpointing company in Chicago. Call for professional services</p>
+                </div>
+                <div class="variant">
+                    <div class="photo">
+                        <img src="img/services/6.jpeg" alt="Firewalls Rebuild">
+                    </div>
+                    <a class="title" >Firewalls Rebuild</a>
+                    <p class="desc">When it comes to firewalls rebuild in Chicago, leave the work to the experts. In this case, trust TOP Masonry&Tuckpointing to get the work done flawlessly! We will have your firewalls rebuild over and done with the best results you could ever imagine. Call us today!</p>
                 </div>
             </div>
             <a href="index.php?action=services" class="btn">SEE ALL SERVICES</a>
