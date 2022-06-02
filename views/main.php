@@ -46,6 +46,30 @@
             </div>
         </div>
     </section>
+
+    <section class="services main" id="services">
+        <div class="container">
+            <h1>From Tuckpointing to Chimney Repair to Window Caulking – TOP Masonry&Tuckpointing Does It All</h1>
+            <div class="variants">
+                <div class="variant">
+                    <div class="photo">
+                        <img src="img/services/1.jpeg" alt="Masonry Restoration">
+                    </div>
+                    <a class="title" >Masonry Restoration</a>
+                    <p class="desc">No structure deserves faulty, rugged masonry work, which is why we do our best at TOP Masonry&Tuckpointing to restore the beauty of your property within a project budget you can afford. Our masonry contractors around Chicago are the best at what they do and handle every work with confidence.</p>
+                </div>
+                <div class="variant">
+                    <div class="photo">
+                        <img src="img//services/2.jpeg" alt="Masonry Construction">
+                    </div>
+                    <a class="title" >Masonry Construction</a>
+                    <p class="desc">When it comes to any masonry construction in Chicago, you can trust our team to give you the best quality of work. Many masonry companies Chicago will give you a substandard finish at an expensive price, but we keep everything at our company reasonable and practical for our clients.</p>
+                </div>
+            </div>
+            <a href="index.php?action=services" class="btn">SEE ALL SERVICES</a>
+        </div>
+    </section>
+
     <section class="gallery" id="gallery">
         <div class="container">
             <h2 class="title">The Gallery of Masonry & Tuckpointing Chicago Projects</h2>

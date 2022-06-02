@@ -386,7 +386,8 @@ section.gallery .container .gallery .img:after{
 section.gallery .container .gallery .img:hover:after{
     opacity: 1;
 }
-section.gallery .container a{
+section.gallery .container a,
+section.services .container a.btn{
     font-family: var(--font-3);
     font-weight: bold;
     margin: 1.5rem 0 2rem;
@@ -459,6 +460,16 @@ section.gallery .viewer .viewer__block button.prevBtn{
 section.gallery .viewer .viewer__block .counter{
     top: 1rem;
     font-size: 1.4rem;
+}
+
+section.services .container a.btn{
+    margin: 2rem auto;
+    border-radius: 0;
+    transition: all .5s ease;
+}
+section.services .container a.btn:hover{
+    background-color: var(--color-3);
+    color: var(--color-1);
 }
 
 section.testimonials {
@@ -1204,5 +1215,18 @@ footer .container .menu ul.body li a{
 @media(max-width:600px){
     section.info .container .locations ul{
         padding: .5rem;
+    }
+}
+@media(min-width:1201px){
+    section.services.main .container .variants{
+        display: flex;
+        grid-template-columns: unset;
+        grid-gap: unset;
+    }
+    section.services.main .container .variants .variant:not(:last-child){
+        margin-right: 2rem;
+    }
+    section.services.main .container .variants .variant{
+        flex: 1;
     }
 }
