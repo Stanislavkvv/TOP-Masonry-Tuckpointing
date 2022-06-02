@@ -52,8 +52,8 @@
         <meta property="og:description" content="TOP Masonry&Tuckpointing is a full service masonry, E.I.F.S./stucco and caulking contractor serving architects, construction managers, condominium associations, developers, general contractors, homeowners and private and public institutions.">
 
         <!-- What image will display in share -->
-        <meta property="og:image" content="http://top-masonry.com/img/LogoTransparent.png">
-        <meta property="og:image:secure_url" content="https://top-masonry.com/img/LogoTransparent.png" />  
+        <meta property="og:image" content="http://top-masonry.com/img/LogoWhite.png">
+        <meta property="og:image:secure_url" content="https://top-masonry.com/img/LogoWhite.png" />  
         <meta property="og:image:type" content="image/png" /> 
 
         <!-- Site URL -->
